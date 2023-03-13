@@ -42,7 +42,7 @@ class MainActivity : ComponentActivity() {
                     modifier = Modifier.fillMaxSize(),
                     color = MaterialTheme.colors.background
                 ) {
-                    pasosParaBeberLimonada()
+                    PasosParaBeberLimonada()
                 }
             }
         }
@@ -50,7 +50,7 @@ class MainActivity : ComponentActivity() {
 }
 
 @Composable
-fun pasosParaBeberLimonada() {
+fun PasosParaBeberLimonada() {
     var paso by remember { mutableStateOf(1) }
     var clicksExprimir by remember { mutableStateOf(0) }
 
@@ -60,7 +60,7 @@ fun pasosParaBeberLimonada() {
     ) {
         when (paso) {
             1 -> {
-                limonada(
+                Limonada(
                     textLabelResourceId = R.string.tap_lemon_tree,
                     drawableResourceId = R.drawable.lemon_tree,
                     contentDescriptionResourceId = R.string.lemon_tree,
@@ -71,7 +71,7 @@ fun pasosParaBeberLimonada() {
                 )
             }
             2 -> {
-                limonada(
+                Limonada(
                     textLabelResourceId = R.string.tap_lemon_tree,
                     drawableResourceId = R.drawable.lemon_squeeze,
                     contentDescriptionResourceId = R.string.lemon,
@@ -84,7 +84,7 @@ fun pasosParaBeberLimonada() {
                 )
             }
             3 -> {
-                limonada(
+                Limonada(
                     textLabelResourceId = R.string.tap_drink_lemonade,
                     drawableResourceId = R.drawable.lemon_drink,
                     contentDescriptionResourceId = R.string.glass_of_lemonade,
@@ -94,7 +94,7 @@ fun pasosParaBeberLimonada() {
                 )
             }
             4 -> {
-                limonada(
+                Limonada(
                     textLabelResourceId = R.string.tap_start_again,
                     drawableResourceId = R.drawable.lemon_restart,
                     contentDescriptionResourceId = R.string.empty_glass,
@@ -111,12 +111,12 @@ fun pasosParaBeberLimonada() {
 @Composable
 fun DefaultPreview() {
     Comportamiento_ClicksTheme {
-        pasosParaBeberLimonada()
+        PasosParaBeberLimonada()
     }
 }
 
 @Composable
-fun limonada(
+fun Limonada(
     textLabelResourceId: Int,
     drawableResourceId: Int,
     contentDescriptionResourceId: Int,
@@ -142,8 +142,8 @@ fun limonada(
                     onClick = onImageClick
                 )
                 .border(
-                    BorderStroke(2.dp, Color(105, 205, 216)),
-                    shape = RoundedCornerShape(4.dp)
+                    BorderStroke(1.dp, Color(105, 205, 216)),
+                    shape = RoundedCornerShape(8.dp)
                 )
                 .padding(16.dp)
         )
